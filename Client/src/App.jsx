@@ -1,4 +1,4 @@
-import Poll from "./components/poll";
+import Poll from "./components/Poll.jsx";
 
 function App() {
     
