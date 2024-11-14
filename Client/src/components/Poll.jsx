@@ -15,7 +15,7 @@ function Poll() {
         // Fetch all polls on initial load
         const fetchPolls = async () => {
             try {
-                const response = await axios.get("http://localhost:3000/api/polls");
+                const response = await axios.get("https://voting-app-h1wn.onrender.com/api/polls");
                 setPolls(response.data); // Set the polls state with data from the backend
             } catch (error) {
                 console.error("Error fetching polls:", error);
@@ -54,7 +54,7 @@ function Poll() {
         e.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:3000/api/poll/create", {
+            const response = await axios.post("https://voting-app-h1wn.onrender.com/api/poll/create", {
                 question,
                 options,
             });
@@ -74,7 +74,7 @@ function Poll() {
 
         try {
             // Submit the vote to the backend
-            await axios.post(`http://localhost:3000/api/poll/${pollId}/vote`, {
+            await axios.post(`https://voting-app-h1wn.onrender.com/api/poll/${pollId}/vote`, {
                 optionIndex,
             });
 
@@ -95,7 +95,7 @@ function Poll() {
 
     const handleDeletePoll = async (pollId) => {
         try {
-            await axios.delete(`http://localhost:3000/api/poll/${pollId}/delete`);
+            await axios.delete(`https://voting-app-h1wn.onrender.com/api/poll/${pollId}/delete`);
             setPolls(polls.filter((poll) => poll._id !== pollId));
             console.log('Poll deleted successfully');
         } catch (error) {
