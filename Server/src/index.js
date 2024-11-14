@@ -10,7 +10,7 @@ const app = express();
 const server = http.createServer(app); // Pass `app` to createServer
 const io = new SocketIOServer(server, {
   cors: {
-    origin: 'http://localhost:5173', // Allow CORS for Socket.IO
+    origin: 'https://voting-app-frontend-quxt.onrender.com', // Allow CORS for Socket.IO
     methods: ['GET', 'POST']
   }
 });
